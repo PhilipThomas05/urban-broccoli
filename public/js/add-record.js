@@ -2,7 +2,7 @@ async function newFormHandler(event) {
     event.preventDefault();
     const record_name = document.querySelector('#record_name').value;
     const artist_name = document.querySelector('#artist_name').value;
-    const genre = document.querySelector('#genre).value;
+    const genre = document.querySelector('#genre').value;
     const condition = document.querySelector('#condition').value;
     const price = document.querySelector('#price').value;
     const user_name = document.querySelector('#user_name').value;
