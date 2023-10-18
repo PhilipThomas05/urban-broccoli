@@ -11,8 +11,7 @@ router.get('/', async (req, res) => {
           model: Listing,
           attributes: ['filename', 'title', 'artist'],
         },
-      ],
-    });
+      ];
 
     const listings = dbListingData.map((listing) =>
       listing.get({ plain: true })
@@ -22,7 +21,7 @@ router.get('/', async (req, res) => {
       listings,
       loggedIn: req.session.loggedIn,
     });
-    
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
