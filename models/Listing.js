@@ -11,21 +11,38 @@ Listing.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    Artist: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    genre: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    condition: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    seller: {
+        type: DataTypes.STRING,
+        allowNull: false,
+
+      },
     user_id: {
         type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id',
       },
-    }
+    },
   },
   {
     sequelize,
