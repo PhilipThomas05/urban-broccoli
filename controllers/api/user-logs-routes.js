@@ -2,32 +2,46 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 
-//Create New//
-router.post('/', async (req, res) => {
+// //Create New   localhost:3001/api/users            //
+// router.post('/', async (req, res) => {
+//     try {
+//       const UserData = await User.create({
+  //         username: req.body.username,
+  //         email: req.body.email,
+  //         password: req.body.password,
+//       });
+  
+//       req.session.save(() => {
+//         req.session.loggedIn = true;
+  
+//         res.status(200).json(UserData);
+//       });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   });
+
+  router.post('/new', async (req, res) => {
     try {
-      const dbUserData = await User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-      });
-  
-      req.session.save(() => {
-        req.session.loggedIn = true;
-  
-        res.status(200).json(UserData);
-      });
+      const newUser = req.body;
+      // hash the password from 'req.body' and save to newUser
+      newUser.password = await bcrypt.hash(req.body.password, 10);
+      // create the newUser with the hashed password and save to DB
+      const userData = await User.create(newUser);
+      res.status(200).json(userData);
     } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   });
 
-  //Log In//
+  //Log In      localhost:3001/api/users/login       //
   router.post('/login', async (req, res) => {
     try {
       const UserData = await User.findOne({
         where: {
           email: req.body.email,
+          password: req.body.password,
         },
       });
   
@@ -38,7 +52,14 @@ router.post('/', async (req, res) => {
         return;
       }
   
-      const validPassword = await UserData.checkPassword(req.body.password);
+       const validPassword = await UserData.checkPassword(req.body.password);
+      // const validatePassword = await bcrypt.compare(req.body.password, userData.password);
+    
+      // if they do not match, return error message
+      // if (!validatePassword) {
+      //   res.status(400).json({ message: 'Login failed. Please try again!' });
+      //   return;
+      // }
   
       if (!validPassword) {
         res
@@ -60,7 +81,7 @@ router.post('/', async (req, res) => {
     }
   });
 
-//Log Out//
+//Log Out        localhost:3001/api/users/logout        //
   router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
