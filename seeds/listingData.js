@@ -75,6 +75,6 @@ const listingData = [
   },
 ]
 
-const seedListing = () => Listing.bulkCreate(listingdata);
+const seedListing = () => Listing.bulkCreate(listingData);
 
 module.exports = seedListing;

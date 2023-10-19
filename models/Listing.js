@@ -15,7 +15,7 @@ Listing.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Artist: {
+    artist: {
         type: DataTypes.STRING,
         allowNull: false,
       },
