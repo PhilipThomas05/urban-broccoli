@@ -1,0 +1,8 @@
+<section class="container">
+  <h3 class="genre-type">{{genre.type}}</h3>
+  <section class="flex-row justify-center">
+    {{#each genre.records as |records}}
+    {{> records-details}}
+    {{/each}}
+  </section>
+</section>
