@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Listing } = require('../../models');
 
 
-// Find by certain genre //
+
 
 //find all records by genre //
 router.get('/:genre', (req, res) => {
@@ -24,17 +24,19 @@ router.get('/:genre', (req, res) => {
 
    // Find a single listing by its title //
    router.get('/:title', (req, res) => {
-    Listing.findByPk(req.params.title).then((listingData) => {
+    Listing.findOne(req.params.title).then((listingData) => {
       res.json(listingData);
     });
   });
 
      // Find a single listing by its artist //
      router.get('/:artist', (req, res) => {
-        Listing.findByPk(req.params.artist).then((listingData) => {
+        Listing.findOne(req.params.artist).then((listingData) => {
           res.json(listingData);
         });
       });
+
+      // Find all listings by condition //
       router.get('/:condition', (req, res) => {
         Listing.findAll({
           order: ['title']
