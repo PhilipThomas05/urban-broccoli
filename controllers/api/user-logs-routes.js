@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 
@@ -52,14 +53,14 @@ const { User } = require('../../models');
         return;
       }
   
-       const validPassword = await UserData.checkPassword(req.body.password);
-      // const validatePassword = await bcrypt.compare(req.body.password, userData.password);
+       const validPassword = UserData.checkPassword(req.body.password);
+      const validatePassword = await bcrypt.compare(req.body.password, UserData.password);
     
       // if they do not match, return error message
-      // if (!validatePassword) {
-      //   res.status(400).json({ message: 'Login failed. Please try again!' });
-      //   return;
-      // }
+      if (!validatePassword) {
+        res.status(400).json({ message: 'Login failed. Please try again!' });
+        return;
+      }
   
       if (!validPassword) {
         res
