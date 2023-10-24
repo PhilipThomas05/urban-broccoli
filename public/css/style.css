@@ -16,7 +16,7 @@
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-    background-image: url(/public/images/recordwallpaper.webp);
+    background-image: url(/public/images/recordwallpaper.jpg);
   }
 
   a {
@@ -83,14 +83,14 @@
     height: auto;
   }
   
-  .record {
+  .listing {
     width: 50%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
   }
   
-  .record-details {
+  .listing-details {
     text-align: center;
     padding: 10px 20px;
     font-weight: bold;
@@ -135,7 +135,18 @@
     font-weight: bold;
   }
   
-  .record-name {
+  .listing-name {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px var(--secondary);
+    border: 10px groove var(--light);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+
+  .genre {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 5px var(--secondary);
