@@ -14,12 +14,7 @@ const PORT = process.env.PORT || 3001;
 const sess = {
     secret: 'Sneaky sneaky secret',
     cookie: {
-      maxAge: 60 * 60 * 1000,
-      httpOnly: true,
-      // secure tells express-session to only initialize session cookies when the protocol being used is HTTPS. 
-      secure: false,
-      // sameSite tells express-session to only initialize session cookies when the referrer provided by the client matches the domain out server is hosted from.
-      sameSite: 'strict',
+      maxAge: 60 * 60 * 1000
     },
     resave: false,
     saveUninitialized: true,
@@ -29,7 +24,10 @@ const sess = {
   };
   
   app.use(session(sess));
-  
+
+
+
+
   const hbs = exphbs.create({ helpers });
   
   app.engine('handlebars', hbs.engine);
