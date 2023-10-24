@@ -7,7 +7,7 @@ This application was intended to be used as a record (vinyl-albums)-resale platf
 No installation is required from the user.
 
 ## Usage
-Upon oage loading, the user is prompted to creaete an account using an email address, username, and password.  Upon creation of the new account, the user can then browse and  search record listings by genre, artist, seller, title, price, or condition, make inquiries to other users/sellers and post records of their own to sell. 
+Upon page loading, the user is prompted to creaete an account using an email address, username, and password.  Upon creation of the new account, the user can then browse and  search record listings by genre, artist, seller, title, price, or condition, make inquiries to other users/sellers and post records of their own to sell. 
 
 ## Tests
 No tests have been written for this application
