@@ -1,12 +1,16 @@
 # Project 2
 
 ## Description
+This application was intended to be used as a record (vinyl-albums)-resale platform.  This project was intended to showcase both front and back-end development skills in a presentable package.  This application- upon final completion- will allow users an opportunity to browse listings posted by othere users encompassing price, quality, genre, artist, and album title.  The application allows for users to post and delete record listings as well as comment on them in an effort to make a purchase.  This project was a challenge to us, and stretched us all creatively, logically, and developmentally.
 
 ## Installation
+No installation is required from the user.
 
 ## Usage
+Upon oage loading, the user is prompted to creaete an account using an email address, username, and password.  Upon creation of the new account, the user can then browse and  search record listings by genre, artist, seller, title, price, or condition, make inquiries to other users/sellers and post records of their own to sell. 
 
 ## Tests
+No tests have been written for this application
 
 ## License
 MIT License
