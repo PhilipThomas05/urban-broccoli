@@ -6,5 +6,5 @@ const findbyRoutes = require('./findby-routes');
 
 router.use('/users', userRoutes);
 router.use('/search', findbyRoutes);
-
+console.log("ok, getting there...");
 module.exports = router;

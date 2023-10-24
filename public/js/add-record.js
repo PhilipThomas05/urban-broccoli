@@ -7,7 +7,7 @@ async function newFormHandler(event) {
     const price = document.querySelector('#price').value;
     const user_name = document.querySelector('#user_name').value;
    
-    const response = await fetch(`/api/record`, {
+    const response = await fetch(`/api/newlisting`, {
       method: 'POST',
       body: JSON.stringify({
         record_name,
